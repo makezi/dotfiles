@@ -1,0 +1,116 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb", "airbnb/hooks", "prettier", "prettier/react"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"]
+      }
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    // Allow the use of 'console'
+    "no-console": "off",
+    // Disallow trailing commas
+    "comma-dangle": "off",
+    // Warn of unused variables with exceptions
+    "no-unused-vars": [
+      "warn",
+      {
+        "ignoreSiblings": true,
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "res|next|^err|_"
+      }
+    ],
+    // Disallow unused expressions which have no effect
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    // Disallow parameter reassign except 'props'
+    "no-param-reassign": ["error", { "props": false }],
+    // Require 'const' for variables that are never reassigned after declared
+    "prefer-const": ["error", { "destructuring": "all" }],
+    // Disable space between function and parameter declaration
+    "space-before-function-paren": "off",
+    // Let prettier handle max-len formatting
+    "max-len": "off",
+    // Disable trailing underscores in variable declarations
+    "no-underscore-dangle": "off",
+    // Disable return statements requiring values
+    "consistent-return": "off",
+    // Let prettier handle arrow parens formatting
+    "arrow-parens": "off",
+    // Allow objects to be declared in a single line
+    "object-curly-newline": "off",
+    // Let prettier handle operator formatting
+    "operator-linebreak": "off",
+    // Prevent local variables to share same name as containing scope variable
+    "no-shadow": [
+      "error",
+      {
+        "hoist": "all",
+        "allow": ["resolve", "reject", "done", "next", "err", "error"]
+      }
+    ],
+    // Allow single quotes for template literals and character escaping
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    // Allow for higher level functions to be before lower-level functions
+    "no-use-before-define": "off",
+    // Prevent missing 'displayName' in React component definition
+    "react/display-name": "warn",
+    // Allow the use of array index as key prop
+    "react/no-array-index-key": "off",
+    // Only allow JSX in .js and .jsx files
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    // Allow JSX props spreading
+    "react/jsx-props-no-spreading": "off",
+    // Allow characters such as ' in JSX statements
+    "react/no-unescaped-entities": "off",
+    // Enforce import order with spaces between groups
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    // Ensure imports appear before other statements
+    "import/first": "error",
+    // Disable prefering default export for files with single export
+    "import/prefer-default-export": "off"
+  }
+}
